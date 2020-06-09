@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Random Quote Generator</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <div class="fullscreen-bg">
+    <video src="video.mp4" autoplay muted loop class="fullscreen-bg__video"></video>
+    </div>
+    <h1>Random Quote Generator</h1>
+    <p id="message" ></p>
+    <input type="button" id="buttonSearch" value="Random Quote!" onclick="GetValue();"/>
+    <div class="space"></div>
+    <h3>Full Quote List</h3>
+    <h4 id="quoteList"></h4>
+    <script type="text/javascript">
+    var myarray= new Array(
+    "There is nothing outside of yourself that can ever enable you to get better, stronger, richer, quicker, or smarter. Everything is within. Everything exists. Seek nothing outside of yourself. - Miyamoto Musashi",
+    "Everything in the universe is within you. Ask all from yourself. -  Mawlana Jalal-al-Din Rumi",
+    "I'd rather go down the river with seven studs than a hundred shitheads. - Colonel Charlie Beckwith",
+    "When you make a choice and say, 'Come hell or high water, I am going to be this,' then you should not be surprised when you are that. It should not be something that is intoxicating or out of character because you have seen this moment for so long that ... when that moment comes, of course it is here because it has been here the whole time, because it has been [in your mind] the whole time. - Kobe Bryant",
+    "Perception is strong and sight weak. In strategy it is important to see distant things as if they were close and to take a distanced view of close things. ― Miyamoto Musashi",
+    "There is more wisdom in your body than in your deepest philosophy. - Friedrich Nietzsche",
+    "The best fighter is never angry. - Lao Tzu"
+    );
+    function GetValue()
+    {
+    var random = myarray[Math.floor(Math.random() * myarray.length)];
+    document.getElementById("message").innerHTML=random;}
+    // to create unordered list of quotes
+    ul = document.createElement('ul');
+    document.getElementById('quoteList').appendChild(ul);
+    myarray.forEach(function (quote) {
+    let li = document.createElement('li');
+    ul.appendChild(li);
+    li.innerHTML += quote;});
+  </script>
+  </body>
+</html>
